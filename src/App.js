@@ -11,7 +11,29 @@ import SignUp from './components/SignUp/SignUp';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.handleChangeUsername = this.handleChangeUsername.bind(this)
+    this.handleChangePassword = this.handleChangePassword.bind(this)
+    this.handleLogIn = this.handleLogIn.bind(this)
   
+    this.state = {
+      username : "",
+      password : "",
+      isUserLoggedIn: false
+    }
+  }
+
+  handleChangePassword(value){
+    this.setState({password: value})
+  }
+  handleChangeUsername(value){
+      this.setState({username: value})
+  }
+
+  handleLogIn(isLoggedIn){
+    this.setState({isUserLoggedIn: isLoggedIn})
+  }
 
   render() {
     return (
@@ -27,10 +49,17 @@ class App extends Component {
                 <Calendar/>
               </Route>
               <Route path="/signin">
-                <SignIn />
+                <SignIn 
+                  username={this.state.username} password={this.state.password} 
+                  onChangePassword ={this.handleChangePassword} onChangeUsername ={this.handleChangeUsername}
+                  onLogin={this.handleLogIn}
+                />
               </Route>
               <Route path="/signup">
-                <SignUp />
+                <SignUp 
+                  username={this.state.username} password={this.state.password} 
+                  onChangePassword ={this.handleChangePassword} onChangeUsername ={this.handleChangeUsername}
+                />
               </Route>
             </Switch>
         </Router>
