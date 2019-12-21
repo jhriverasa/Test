@@ -15,27 +15,36 @@ class SignIn extends Component {
         this.handleChangeUsername = this.handleChangeUsername.bind(this)
         this.handleChangePassword = this.handleChangePassword.bind(this)
 
-        this.state = {
-             username: "",
-             password: ""
-        }
+
     }
 
     handleLogin(e){
         e.preventDefault()
-        localStorage.setItem('username', this.state.username)
-        localStorage.setItem('password', this.state.password)
-        alert("Logged in as: "+ this.state.username)
+        
+        //validate credentials
+        const reg = localStorage.getItem(this.props.username)
+        if(!!reg && reg === this.props.password){
+            alert("Logged in as: "+ this.props.username)
+            this.props.onLogin(true)
+        }else{
+            alert("Invalid credentials! ")
+            this.props.onLogin(false)
+        }
+            
     }
 
     handleChangePassword(e){
-        this.setState({password: e.target.value})
+        this.props.onChangePassword(e.target.value)
     }
     handleChangeUsername(e){
-        this.setState({username: e.target.value})
+        this.props.onChangeUsername(e.target.value)
     }
     
-
+    componentDidMount(){
+        //clear values in state
+        this.props.onChangeUsername("")
+        this.props.onChangePassword("")
+    }
 
     render() {
         return (
@@ -52,12 +61,12 @@ class SignIn extends Component {
                         <Form className="inputLogin">
                             <Form.Group controlId="formBasicUserName">
                                 <Form.Label>Username</Form.Label>
-                                <Form.Control onChange={this.handleChangeUsername} value={this.state.username} placeholder="Enter user" />
+                                <Form.Control onChange={this.handleChangeUsername}   placeholder="Enter user" />
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control onChange={this.handleChangePassword} value={this.state.password} type="password" placeholder="Password" />
+                                <Form.Control onChange={this.handleChangePassword}  type="password" placeholder="Password" />
                             </Form.Group>
                             
                             <Button onClick={this.handleLogin} size="lg" variant="primary" type="submit" className="loginButton">
