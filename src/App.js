@@ -1,4 +1,5 @@
 
+
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from "react-router-dom";
 import { Switch, Route } from "react-router-dom";
@@ -16,7 +17,8 @@ class App extends Component {
     this.handleChangeUsername = this.handleChangeUsername.bind(this)
     this.handleChangePassword = this.handleChangePassword.bind(this)
     this.handleLogIn = this.handleLogIn.bind(this)
-  
+    this.handleLogOut = this.handleLogOut.bind(this)
+
     this.state = {
       username : "",
       password : "",
@@ -34,13 +36,16 @@ class App extends Component {
   handleLogIn(isLoggedIn){
     this.setState({isUserLoggedIn: isLoggedIn})
   }
+  handleLogOut(){
+    this.setState({isUserLoggedIn: false})
+  }
 
   render() {
     return (
       <div className="App">
         
         <Router>
-        <NavigationBar/>
+        <NavigationBar isUserLoggedIn={this.state.isUserLoggedIn} onLogOut ={this.handleLogOut}/>
             <Switch>
               <Route path="/github">
                 <Github />
@@ -69,4 +74,3 @@ class App extends Component {
 }
 
 export default App
-
