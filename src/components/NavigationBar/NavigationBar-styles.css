@@ -1,0 +1,18 @@
+
+  .navbar{
+    background-color: #ffffff;
+    font-family: 'Lobster', cursive;
+    font-size: 170%;
+    margin-bottom: 1%;
+  }
+  
+  .NavLink{
+    margin: 14px;
+    transition: .5s ease-in-out;
+    color: #ffffff;
+  }
+
+  .NavLink:hover{
+    text-decoration-line: none;
+    color: #ffffff60;
+  }
