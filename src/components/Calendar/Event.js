@@ -10,11 +10,11 @@ export class Event extends Component {
     render() {
         return (
            
-                        <div className="eventContainer">
-                            <h3>{this.props.summary}</h3>
-                            <p>Start: {this.props.start} - End: {this.props.end}</p>
-                            <p>Creator: {this.props.creator}</p>
-                        </div>
+            <div className="eventContainer">
+                <h3>{this.props.summary}</h3>
+                <p>Start: {this.props.start} - End: {this.props.end}</p>
+                <p>Creator: {this.props.creator}</p>
+            </div>
          
         )
     }

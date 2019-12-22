@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from "react-router-dom";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect} from "react-router-dom";
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Calendar from './components/Calendar/Calendar';
 import Github from './components/Github/Github';
@@ -35,9 +35,11 @@ class App extends Component {
 
   handleLogIn(isLoggedIn){
     this.setState({isUserLoggedIn: isLoggedIn})
+    
   }
   handleLogOut(){
     this.setState({isUserLoggedIn: false})
+    window.location = 'http://localhost:3000/signin'
   }
 
   render() {
@@ -47,6 +49,7 @@ class App extends Component {
         <Router>
         <NavigationBar isUserLoggedIn={this.state.isUserLoggedIn} onLogOut ={this.handleLogOut}/>
             <Switch>
+              <Redirect exact from='/' to="/signin" />
               <Route path="/github">
                 <Github />
               </Route>
@@ -57,7 +60,7 @@ class App extends Component {
                 <SignIn 
                   username={this.state.username} password={this.state.password} 
                   onChangePassword ={this.handleChangePassword} onChangeUsername ={this.handleChangeUsername}
-                  onLogin={this.handleLogIn}
+                  onLogin={this.handleLogIn} isUserLoggedIn={this.state.isUserLoggedIn}
                 />
               </Route>
               <Route path="/signup">

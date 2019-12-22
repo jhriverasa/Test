@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Event from './Event'
 import './Calendar-styles.css';
 
-const CLIENT_ID = [YOUR_API_KEY_HERE]
+const CLIENT_ID = "441635703177-hiu02chpaj6lu160eeudgie2fegbvnic.apps.googleusercontent.com"
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 const SCOPES = "https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/calendar.events.readonly"
 
@@ -52,7 +52,7 @@ class Calendar extends Component {
                 this.setState({
                     showAuthButton: false,
                     showSignOutButton: true
-            })
+                })
 
             //Request for upcoming events
             gapi.client.request({
