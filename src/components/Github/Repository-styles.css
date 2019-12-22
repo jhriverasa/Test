@@ -1,0 +1,30 @@
+.repoContainer{
+    border-style: solid;
+    border-color: rgba(63, 63, 63, 0.856);
+    border-width: thin;
+    border-radius: 7px;
+    margin-bottom: 1%;
+    margin-inline: 6%;
+    
+    
+    -webkit-box-shadow: 10px 10px 18px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 18px -4px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 18px -4px rgba(0,0,0,0.75);
+
+    
+
+
+    background: rgba(25,26,25,1);
+    background: -moz-linear-gradient(top, rgba(25,26,25,1) 0%, rgba(25,26,25,0.96) 54%, rgba(25,26,25,0.92) 99%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25,26,25,1)), color-stop(54%, rgba(25,26,25,0.96)), color-stop(99%, rgba(25,26,25,0.92)));
+    background: -webkit-linear-gradient(top, rgba(25,26,25,1) 0%, rgba(25,26,25,0.96) 54%, rgba(25,26,25,0.92) 99%);
+    background: -o-linear-gradient(top, rgba(25,26,25,1) 0%, rgba(25,26,25,0.96) 54%, rgba(25,26,25,0.92) 99%);
+    background: -ms-linear-gradient(top, rgba(25,26,25,1) 0%, rgba(25,26,25,0.96) 54%, rgba(25,26,25,0.92) 99%);
+    background: linear-gradient(to bottom, rgba(25,26,25,1) 0%, rgba(25,26,25,0.96) 54%, rgba(25,26,25,0.92) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191a19', endColorstr='#191a19', GradientType=0 );
+    
+
+}
+p{
+    color:white;
+}

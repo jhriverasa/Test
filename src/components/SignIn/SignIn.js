@@ -51,14 +51,14 @@ class SignIn extends Component {
             <Container>
                 <Row> 
                     <Col> 
-                        <h1 className= "signInTitle">Log In</h1> 
+                        {this.props.isUserLoggedIn ?  <h1 className= "signInTitle">Already logged in!</h1> : <h1 className= "signInTitle">Log In</h1> }
                     </Col>
                 </Row>
 
                 <Row >
                     <Col></Col>
                     <Col xs={6}>
-                        <Form className="inputLogin">
+                       {this.props.isUserLoggedIn ? null :  <Form className="inputLogin">
                             <Form.Group controlId="formBasicUserName">
                                 <Form.Label>Username</Form.Label>
                                 <Form.Control onChange={this.handleChangeUsername}   placeholder="Enter user" />
@@ -73,6 +73,7 @@ class SignIn extends Component {
                                 Login
                             </Button>
                         </Form>
+                        }
                     </Col>
                     <Col></Col>
                 </Row>
