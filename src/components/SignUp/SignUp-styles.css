@@ -1,0 +1,23 @@
+.inputSignup{
+    border-style: solid;
+    border-color: rgba(63, 63, 63, 0.856);
+    border-width: thin;
+    border-radius: 7px;
+}
+
+.signupButton{
+    margin-bottom: 2%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group{
+    margin-inline: 5%;
+    margin-top: 2%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.signUpTitle{
+    font-family: 'Lobster', cursive;
+    margin-bottom: 3%;
+    color:black;
+}
